@@ -196,4 +196,197 @@ Year: 2025
 </p>
 
 </body>
+
+
 </html>
+<!-- ====================== -->
+<!--     CAR GALLERY SECTION     -->
+<!-- Add this wherever you want images + videos -->
+<!-- ====================== -->
+<section class="car-gallery" id="cars">
+  <div class="container">
+    <h2>Explore Popular Car Models</h2>
+    <p class="subtitle">Check out some stunning cars with images and video reviews (2025–2026 highlights)</p>
+
+    <!-- Image Grid -->
+    <div class="image-grid">
+      <!-- Car 1: Honda Civic (popular compact) -->
+      <div class="car-card">
+        <img src="https://images.unsplash.com/photo-1502877338535-766e3a6052c0?auto=format&fit=crop&q=80&w=1200" 
+             alt="Honda Civic 2025/2026 modern compact car" 
+             loading="lazy">
+        <h3>Honda Civic</h3>
+        <p>Reliable, fun-to-drive compact — a bestseller year after year.</p>
+      </div>
+
+      <!-- Car 2: Toyota Camry (midsize sedan king) -->
+      <div class="car-card">
+        <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&q=80&w=1200" 
+             alt="Toyota Camry sleek sedan" 
+             loading="lazy">
+        <h3>Toyota Camry</h3>
+        <p>Hybrid efficiency meets comfort — top midsize pick.</p>
+      </div>
+
+      <!-- Car 3: Tesla Model Y (EV leader) -->
+      <div class="car-card">
+        <img src="https://images.unsplash.com/photo-1617788138017-2d1336740a7e?auto=format&fit=crop&q=80&w=1200" 
+             alt="Tesla Model Y electric SUV" 
+             loading="lazy">
+        <h3>Tesla Model Y</h3>
+        <p>Fast, tech-packed EV SUV — massive popularity.</p>
+      </div>
+
+      <!-- Car 4: BMW M3/M-like performance -->
+      <div class="car-card">
+        <img src="https://images.unsplash.com/photo-1559416523-140ddc3d238c?auto=format&fit=crop&q=80&w=1200" 
+             alt="BMW M3 style performance sedan" 
+             loading="lazy">
+        <h3>BMW M3</h3>
+        <p>Iconic sports sedan with thrilling dynamics.</p>
+      </div>
+
+      <!-- Car 5: Porsche 911-inspired sports car -->
+      <div class="car-card">
+        <img src="https://images.unsplash.com/photo-1503736334956-4c1d9e8d0e43?auto=format&fit=crop&q=80&w=1200" 
+             alt="Porsche 911 classic sports car" 
+             loading="lazy">
+        <h3>Porsche 911</h3>
+        <p>Legendary rear-engine sports car — pure driving joy.</p>
+      </div>
+
+      <!-- Add more cards if you want (repeat pattern) -->
+    </div>
+
+    <!-- Video Section -->
+    <div class="video-section">
+      <h3>Video Reviews & Walkthroughs</h3>
+      
+      <div class="video-grid">
+        <!-- Toyota Camry 2025 review -->
+        <div class="video-wrapper">
+          <iframe width="100%" height="100%" 
+                  src="https://www.youtube.com/embed/s1JRXIe4QkU" 
+                  title="2025 Toyota Camry Review" 
+                  frameborder="0" 
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                  allowfullscreen></iframe>
+        </div>
+
+        <!-- Honda Civic fun drive -->
+        <div class="video-wrapper">
+          <iframe width="100%" height="100%" 
+                  src="https://www.youtube.com/embed/ByOS4634VcU" 
+                  title="BMW / Performance Car Insight" 
+                  frameborder="0" 
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                  allowfullscreen></iframe>
+        </div>
+
+        <!-- Tesla Model Y Performance -->
+        <div class="video-wrapper">
+          <iframe width="100%" height="100%" 
+                  src="https://www.youtube.com/embed/GfWI3LNB9_8" 
+                  title="2025 Tesla Model Y Performance Review" 
+                  frameborder="0" 
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                  allowfullscreen></iframe>
+        </div>
+
+        <!-- Add more iframes for other models if needed -->
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== -->
+<!--        CSS STYLES      -->
+<!-- Put this in your <head> or external stylesheet -->
+<!-- ====================== -->
+<style>
+  .car-gallery {
+    padding: 60px 20px;
+    background: #f8f9fa;
+  }
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  h2 {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 2.5rem;
+  }
+  .subtitle {
+    text-align: center;
+    color: #666;
+    margin-bottom: 40px;
+  }
+
+  .image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-bottom: 60px;
+  }
+  .car-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+  }
+  .car-card:hover {
+    transform: translateY(-8px);
+  }
+  .car-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+  }
+  .car-card h3 {
+    padding: 15px 15px 5px;
+    margin: 0;
+    font-size: 1.4rem;
+  }
+  .car-card p {
+    padding: 0 15px 20px;
+    margin: 0;
+    color: #555;
+    font-size: 0.95rem;
+  }
+
+  .video-section {
+    text-align: center;
+  }
+  .video-section h3 {
+    margin-bottom: 30px;
+    font-size: 2rem;
+  }
+  .video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 30px;
+  }
+  .video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  }
+  .video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  @media (max-width: 768px) {
+    .video-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

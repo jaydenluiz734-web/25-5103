@@ -13,123 +13,198 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #000;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
             color: #333;
             line-height: 1.6;
+            min-height: 100vh;
         }
 
-        /* Hero Section */
+        /* Hero Section - Sunset Gradient */
         .hero {
-            background-color: #4CAF50;
+            background: linear-gradient(135deg, #ff6b6b 0%, #feca57 50%, #48dbfb 100%);
             color: white;
             text-align: center;
-            padding: 60px 20px;
+            padding: 80px 20px;
             max-width: 1000px;
             margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.3;
+        }
+
+        .hero h1, .hero h2, .hero h3, .hero h4, .hero .tagline {
+            position: relative;
+            z-index: 1;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
         }
 
         .hero h1 {
-            font-size: 2.5em;
+            font-size: 3em;
             margin-bottom: 10px;
+            background: linear-gradient(to right, #fff, #ffeaa7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .hero h2 {
             font-size: 1.8em;
             margin-bottom: 10px;
             font-weight: 600;
+            color: #2d3436;
         }
 
         .hero h3 {
             font-size: 1.3em;
             margin-bottom: 10px;
             font-weight: 500;
+            color: #d63031;
         }
 
         .hero h4 {
             font-size: 1.1em;
             margin-bottom: 20px;
             font-weight: 500;
+            color: #0984e3;
         }
 
         .hero .tagline {
-            font-size: 1.2em;
+            font-size: 1.3em;
             font-style: italic;
             margin-top: 30px;
+            color: #2d3436;
+            font-weight: 500;
         }
 
-        /* Navigation */
+        /* Navigation - Glassmorphism */
         nav {
-            background-color: #f0f8ff;
-            padding: 15px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 20px;
             max-width: 1000px;
             margin: 0 auto;
-            border-top: 4px solid #000;
+            border-top: 3px solid rgba(255, 255, 255, 0.2);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         nav ul {
             list-style: none;
             display: flex;
             justify-content: center;
-            gap: 30px;
+            gap: 40px;
         }
 
         nav a {
-            color: #4CAF50;
+            color: #ffeaa7;
             text-decoration: none;
             font-weight: 600;
             font-size: 1.1em;
+            transition: all 0.3s;
+            padding: 8px 16px;
+            border-radius: 20px;
         }
 
         nav a:hover {
-            text-decoration: underline;
+            background: rgba(255, 234, 167, 0.2);
+            color: #fff;
+            transform: translateY(-2px);
         }
 
         /* Main Content Container */
         .container {
             max-width: 1000px;
             margin: 0 auto;
-            background-color: #000;
             padding: 20px;
         }
 
         /* Intro Text */
         .intro {
-            color: #666;
+            color: #dfe6e9;
             margin-bottom: 20px;
             font-size: 0.95em;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
         }
 
-        /* Blockquote */
+        /* Blockquote - Gradient Border */
         .blockquote {
-            background-color: #f9f9f9;
-            border-left: 4px solid #4CAF50;
-            padding: 20px;
-            margin: 20px 0;
+            background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+            backdrop-filter: blur(10px);
+            border-left: 4px solid #ff6b6b;
+            padding: 25px;
+            margin: 25px 0;
             font-style: italic;
-            color: #555;
+            color: #dfe6e9;
+            border-radius: 0 10px 10px 0;
+            position: relative;
+        }
+
+        .blockquote::before {
+            content: '"';
+            font-size: 4em;
+            position: absolute;
+            top: -20px;
+            left: 10px;
+            color: rgba(255, 107, 107, 0.3);
+            font-family: Georgia, serif;
         }
 
         .blockquote cite {
             display: block;
-            margin-top: 10px;
+            margin-top: 15px;
             font-weight: bold;
-            color: #333;
+            color: #ffeaa7;
             font-style: normal;
         }
 
-        /* White Cards */
+        /* Glass Cards */
         .card {
-            background-color: white;
-            border-radius: 8px;
-            padding: 30px;
-            margin: 20px 0;
-            box-shadow: 0 2px 5px rgba(255,255,255,0.1);
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 35px;
+            margin: 25px 0;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #ff6b6b, #feca57, #48dbfb);
         }
 
         .card h2 {
-            color: #333;
-            margin-bottom: 20px;
-            font-size: 1.5em;
+            color: #2d3436;
+            margin-bottom: 25px;
+            font-size: 1.6em;
+            position: relative;
+            display: inline-block;
+        }
+
+        .card h2::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: linear-gradient(90deg, #ff6b6b, #feca57);
+            border-radius: 2px;
         }
 
         /* Lists */
@@ -139,13 +214,19 @@
         }
 
         .feature-list li {
-            padding: 12px 0;
-            border-bottom: 1px solid #eee;
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 15px;
             font-size: 1.1em;
-            color: #555;
+            color: #2d3436;
+            transition: all 0.3s;
+        }
+
+        .feature-list li:hover {
+            padding-left: 10px;
+            color: #d63031;
         }
 
         .feature-list li:last-child {
@@ -153,159 +234,277 @@
         }
 
         .icon {
-            font-size: 1.3em;
+            font-size: 1.5em;
+            background: linear-gradient(135deg, #ff6b6b, #feca57);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         /* Nested List */
         .nested-list {
-            margin-top: 15px;
+            margin-top: 20px;
             margin-left: 30px;
-            background-color: #fafafa;
-            padding: 20px;
-            border-radius: 6px;
-            border: 1px solid #eee;
+            background: linear-gradient(135deg, #fff5f5, #fffbeb);
+            padding: 25px;
+            border-radius: 10px;
+            border: 2px solid #ffeaa7;
         }
 
         /* Table Section */
         .table-section {
-            margin: 40px 0;
+            margin: 50px 0;
         }
 
         .table-section h2 {
-            color: #4CAF50;
+            background: linear-gradient(135deg, #ff6b6b, #feca57);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             text-align: center;
-            margin-bottom: 20px;
-            font-size: 1.8em;
+            margin-bottom: 30px;
+            font-size: 2em;
+            font-weight: 700;
         }
 
         table {
             width: 100%;
-            border-collapse: collapse;
-            background-color: white;
+            border-collapse: separate;
+            border-spacing: 0;
+            background: rgba(255, 255, 255, 0.95);
             font-size: 0.95em;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
         }
 
         th {
-            background-color: #4CAF50;
+            background: linear-gradient(135deg, #d63031 0%, #e17055 100%);
             color: white;
-            padding: 12px;
+            padding: 18px 15px;
             text-align: left;
             font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-size: 0.85em;
         }
 
         td {
-            padding: 12px;
-            border-bottom: 1px solid #ddd;
-            color: #555;
+            padding: 16px 15px;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            color: #2d3436;
         }
 
         tr:hover {
-            background-color: #f5f5f5;
+            background: linear-gradient(90deg, rgba(255, 107, 107, 0.05), rgba(254, 202, 87, 0.05));
+        }
+
+        tr:last-child td {
+            border-bottom: none;
         }
 
         /* Steps Section */
         .steps-section {
-            margin: 40px 0;
+            margin: 50px 0;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 40px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
         }
 
         .steps-section h2 {
-            color: #4CAF50;
+            background: linear-gradient(135deg, #00b894, #00cec9);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             text-align: center;
-            margin-bottom: 30px;
-            font-size: 1.8em;
+            margin-bottom: 40px;
+            font-size: 2em;
+            font-weight: 700;
         }
 
         .steps-list {
-            color: #666;
-            padding-left: 20px;
+            color: #dfe6e9;
+            padding-left: 25px;
+            list-style: none;
+            counter-reset: step-counter;
         }
 
         .steps-list li {
-            margin-bottom: 15px;
+            margin-bottom: 25px;
             line-height: 1.8;
+            position: relative;
+            padding-left: 50px;
+            counter-increment: step-counter;
+        }
+
+        .steps-list li::before {
+            content: counter(step-counter);
+            position: absolute;
+            left: 0;
+            top: 0;
+            background: linear-gradient(135deg, #ff6b6b, #feca57);
+            color: white;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 0.9em;
+        }
+
+        .steps-list li strong {
+            color: #ffeaa7;
+            display: block;
+            margin-bottom: 5px;
+            font-size: 1.1em;
         }
 
         /* Image Gallery */
         .gallery-section {
-            margin: 40px 0;
+            margin: 50px 0;
         }
 
         .gallery-section h2 {
-            color: #4CAF50;
+            background: linear-gradient(135deg, #a29bfe, #6c5ce7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             text-align: center;
-            margin-bottom: 30px;
-            font-size: 1.8em;
+            margin-bottom: 40px;
+            font-size: 2em;
+            font-weight: 700;
         }
 
         .gallery {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
+            gap: 25px;
         }
 
         .gallery-item {
-            background-color: white;
-            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
             overflow: hidden;
-            box-shadow: 0 2px 5px rgba(255,255,255,0.1);
-            transition: transform 0.3s;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transition: all 0.4s;
+            position: relative;
         }
 
         .gallery-item:hover {
-            transform: translateY(-5px);
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .gallery-item::after {
+            content: '→';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            background: rgba(255, 107, 107, 0.9);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5em;
+            transition: all 0.3s;
+        }
+
+        .gallery-item:hover::after {
+            transform: translate(-50%, -50%) scale(1);
         }
 
         .gallery-item img {
             width: 100%;
-            height: 200px;
+            height: 220px;
             object-fit: cover;
-            border: 3px solid #b8e6b8;
-            border-radius: 4px;
+            border: 4px solid transparent;
+            border-image: linear-gradient(135deg, #ff6b6b, #feca57) 1;
+            transition: all 0.3s;
+        }
+
+        .gallery-item:hover img {
+            filter: brightness(0.8);
         }
 
         .gallery-item p {
-            padding: 15px;
+            padding: 20px;
             text-align: center;
-            color: #555;
-            font-weight: 500;
+            color: #2d3436;
+            font-weight: 600;
+            font-size: 1.05em;
+            background: linear-gradient(90deg, transparent, rgba(255, 234, 167, 0.3), transparent);
         }
 
         /* Links */
         a {
-            color: #4CAF50;
+            color: #e17055;
+            transition: all 0.3s;
         }
 
         .underline-link {
-            text-decoration: underline;
-            color: #555;
+            text-decoration: none;
+            color: #d63031;
+            border-bottom: 2px solid #fab1a0;
+            transition: all 0.3s;
+        }
+
+        .underline-link:hover {
+            border-bottom-color: #d63031;
+            color: #ff6b6b;
         }
 
         /* Price styling */
         .old-price {
             text-decoration: line-through;
-            color: #999;
-            margin-right: 5px;
+            color: #b2bec3;
+            margin-right: 8px;
+            font-size: 0.9em;
         }
 
         .new-price {
-            color: #333;
+            background: linear-gradient(135deg, #d63031, #e17055);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        /* Floating Animation */
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .hero h1 {
+            animation: float 3s ease-in-out infinite;
         }
 
         /* Responsive */
         @media (max-width: 768px) {
             nav ul {
                 flex-direction: column;
-                gap: 10px;
+                gap: 15px;
                 text-align: center;
             }
             
             .hero h1 {
-                font-size: 1.8em;
+                font-size: 2em;
             }
             
             table {
-                font-size: 0.8em;
+                font-size: 0.75em;
+            }
+            
+            .steps-list li {
+                padding-left: 40px;
             }
         }
     </style>
@@ -344,7 +543,7 @@
 
         <!-- Blockquote -->
         <div class="blockquote">
-            "Adventure you can trust, prices you can afford, and service with a smile — your neighborhood travel agency committed to quality every day."
+            Adventure you can trust, prices you can afford, and service with a smile — your neighborhood travel agency committed to quality every day.
             <cite>— Tourism Hub</cite>
         </div>
 
@@ -380,22 +579,22 @@
                 <li><span class="icon">💰</span> <a href="#" class="underline-link">Free cancellation on bookings over KSh 50,000</a></li>
                 <li><span class="icon">📋</span> <a href="#" class="underline-link">Travel documents ready within 24 hours</a></li>
             </ul>
-            <p style="margin-top: 20px; color: #666;">Group departures available every 25th day of the month</p>
+            <p style="margin-top: 25px; color: #636e72; font-style: italic;">Group departures available every 25th day of the month</p>
         </div>
 
         <!-- Contact -->
         <div class="card" id="contact">
             <h2>Contact & Support</h2>
             <ul class="feature-list">
-                <li><span class="icon">📞</span> <strong>WhatsApp: +254 712 345 678</strong></li>
-                <li><span class="icon">✉️</span> <strong>Email: support@tourismhub.co.ke</strong></li>
-                <li><span class="icon">💬</span> <strong>Live Chat: Available 8am–8pm daily</strong></li>
+                <li><span class="icon">📞</span> <strong style="color: #d63031;">WhatsApp: +254 712 345 678</strong></li>
+                <li><span class="icon">✉️</span> <strong style="color: #d63031;">Email: support@tourismhub.co.ke</strong></li>
+                <li><span class="icon">💬</span> <strong style="color: #d63031;">Live Chat: Available 8am–8pm daily</strong></li>
             </ul>
         </div>
 
         <!-- Things to Pack -->
         <div class="card">
-            <h2 style="color: #4CAF50; text-align: center; margin-bottom: 20px;">Things to Pack for Your Trip</h2>
+            <h2 style="color: #6c5ce7; text-align: center; margin-bottom: 25px;">Things to Pack for Your Trip</h2>
             <ul class="feature-list">
                 <li>Passport & Travel Documents</li>
                 <li>Comfortable Walking Shoes</li>
@@ -417,22 +616,22 @@
             <table>
                 <thead>
                     <tr>
-                        <th>DESTINATION</th>
-                        <th>TYPE</th>
-                        <th>PRICE</th>
-                        <th>AVAILABILITY</th>
-                        <th>DURATION</th>
-                        <th>GUIDED</th>
-                        <th>MEALS INCLUDED</th>
-                        <th>INTERNATIONAL</th>
+                        <th>Destination</th>
+                        <th>Type</th>
+                        <th>Price</th>
+                        <th>Availability</th>
+                        <th>Duration</th>
+                        <th>Guided</th>
+                        <th>Meals</th>
+                        <th>International</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td><strong>Maasai Mara</strong></td>
                         <td>Safari</td>
-                        <td>KES 45,000</td>
-                        <td>Available</td>
+                        <td><span style="color: #d63031; font-weight: 600;">KES 45,000</span></td>
+                        <td><span style="color: #00b894; font-weight: 600;">✓ Available</span></td>
                         <td>3 Days</td>
                         <td>YES</td>
                         <td>YES</td>
@@ -441,8 +640,8 @@
                     <tr>
                         <td><strong>Diani Beach</strong></td>
                         <td>Beach</td>
-                        <td>KES 25,000</td>
-                        <td>Limited</td>
+                        <td><span style="color: #d63031; font-weight: 600;">KES 25,000</span></td>
+                        <td><span style="color: #fdcb6e; font-weight: 600;">! Limited</span></td>
                         <td>4 Days</td>
                         <td>NO</td>
                         <td>YES</td>
@@ -451,8 +650,8 @@
                     <tr>
                         <td><strong>Mount Kenya</strong></td>
                         <td>Trekking</td>
-                        <td>KES 35,000</td>
-                        <td>Available</td>
+                        <td><span style="color: #d63031; font-weight: 600;">KES 35,000</span></td>
+                        <td><span style="color: #00b894; font-weight: 600;">✓ Available</span></td>
                         <td>5 Days</td>
                         <td>YES</td>
                         <td>YES</td>
@@ -461,8 +660,8 @@
                     <tr>
                         <td><strong>Serengeti</strong></td>
                         <td>Safari</td>
-                        <td>KES 85,000</td>
-                        <td>Booked</td>
+                        <td><span style="color: #d63031; font-weight: 600;">KES 85,000</span></td>
+                        <td><span style="color: #d63031; font-weight: 600;">✗ Booked</span></td>
                         <td>4 Days</td>
                         <td>YES</td>
                         <td>YES</td>
@@ -471,8 +670,8 @@
                     <tr>
                         <td><strong>Lamu Island</strong></td>
                         <td>Cultural</td>
-                        <td>KES 30,000</td>
-                        <td>Available</td>
+                        <td><span style="color: #d63031; font-weight: 600;">KES 30,000</span></td>
+                        <td><span style="color: #00b894; font-weight: 600;">✓ Available</span></td>
                         <td>3 Days</td>
                         <td>YES</td>
                         <td>NO</td>

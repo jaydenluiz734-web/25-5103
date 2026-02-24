@@ -1,428 +1,527 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Your Dream Car – Welcome</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', system-ui, sans-serif;
-      line-height: 1.6;
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 0 20px;
-      background: #f8f9fa;
-      color: #222;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tourism Hub - Explore the World</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    .intro-paragraph {
-      background: white;
-      padding: 2.2rem 2.8rem;
-      border-radius: 12px;
-      box-shadow: 0 4px 18px rgba(0,0,0,0.08);
-      border-left: 5px solid #e63946;
-    }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #000;
+            color: #333;
+            line-height: 1.6;
+        }
 
-    .intro-paragraph p {
-      margin: 0.9rem 0;
-      font-size: 1.15rem;
-    }
+        /* Hero Section */
+        .hero {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
 
-    .highlight {
-      background-color: #fff3cd;
-      padding: 2px 5px;
-      border-radius: 3px;
-    }
+        .hero h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
 
-    .indented-quote {
-      margin: 1.4rem 0 1.4rem 3rem;
-      padding-left: 1.1rem;
-      border-left: 4px solid #adb5bd;
-      color: #495057;
-      font-style: italic;
-    }
+        .hero h2 {
+            font-size: 1.8em;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
 
-    footer {
-      margin-top: 3rem;
-      text-align: center;
-      color: #6c757d;
-      font-size: 0.95rem;
-    }
+        .hero h3 {
+            font-size: 1.3em;
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
 
-    .red-accent { color: #e63946; font-weight: 600; }
-  </style>
+        .hero h4 {
+            font-size: 1.1em;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        .hero .tagline {
+            font-size: 1.2em;
+            font-style: italic;
+            margin-top: 30px;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: #f0f8ff;
+            padding: 15px;
+            max-width: 1000px;
+            margin: 0 auto;
+            border-top: 4px solid #000;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        nav a {
+            color: #4CAF50;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1em;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* Main Content Container */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: #000;
+            padding: 20px;
+        }
+
+        /* Intro Text */
+        .intro {
+            color: #666;
+            margin-bottom: 20px;
+            font-size: 0.95em;
+        }
+
+        /* Blockquote */
+        .blockquote {
+            background-color: #f9f9f9;
+            border-left: 4px solid #4CAF50;
+            padding: 20px;
+            margin: 20px 0;
+            font-style: italic;
+            color: #555;
+        }
+
+        .blockquote cite {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+            color: #333;
+            font-style: normal;
+        }
+
+        /* White Cards */
+        .card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 30px;
+            margin: 20px 0;
+            box-shadow: 0 2px 5px rgba(255,255,255,0.1);
+        }
+
+        .card h2 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+        }
+
+        /* Lists */
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .feature-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.1em;
+            color: #555;
+        }
+
+        .feature-list li:last-child {
+            border-bottom: none;
+        }
+
+        .icon {
+            font-size: 1.3em;
+        }
+
+        /* Nested List */
+        .nested-list {
+            margin-top: 15px;
+            margin-left: 30px;
+            background-color: #fafafa;
+            padding: 20px;
+            border-radius: 6px;
+            border: 1px solid #eee;
+        }
+
+        /* Table Section */
+        .table-section {
+            margin: 40px 0;
+        }
+
+        .table-section h2 {
+            color: #4CAF50;
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: white;
+            font-size: 0.95em;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        td {
+            padding: 12px;
+            border-bottom: 1px solid #ddd;
+            color: #555;
+        }
+
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+
+        /* Steps Section */
+        .steps-section {
+            margin: 40px 0;
+        }
+
+        .steps-section h2 {
+            color: #4CAF50;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 1.8em;
+        }
+
+        .steps-list {
+            color: #666;
+            padding-left: 20px;
+        }
+
+        .steps-list li {
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+
+        /* Image Gallery */
+        .gallery-section {
+            margin: 40px 0;
+        }
+
+        .gallery-section h2 {
+            color: #4CAF50;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 1.8em;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-item {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(255,255,255,0.1);
+            transition: transform 0.3s;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border: 3px solid #b8e6b8;
+            border-radius: 4px;
+        }
+
+        .gallery-item p {
+            padding: 15px;
+            text-align: center;
+            color: #555;
+            font-weight: 500;
+        }
+
+        /* Links */
+        a {
+            color: #4CAF50;
+        }
+
+        .underline-link {
+            text-decoration: underline;
+            color: #555;
+        }
+
+        /* Price styling */
+        .old-price {
+            text-decoration: line-through;
+            color: #999;
+            margin-right: 5px;
+        }
+
+        .new-price {
+            color: #333;
+            font-weight: bold;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+            
+            .hero h1 {
+                font-size: 1.8em;
+            }
+            
+            table {
+                font-size: 0.8em;
+            }
+        }
+    </style>
 </head>
 <body>
 
-<div class="intro-paragraph">
+    <!-- Hero Section -->
+    <div class="hero">
+        <h1>Tourism Hub (H1)</h1>
+        <h2>Travel with US (H2)</h2>
+        <h3>100% Adventure (H3)</h3>
+        <h4>Local Experiences (H4)</h4>
+        <h2>"We are the best!"</h2>
+        <p class="tagline">Adventure Awaits Daily – Your Neighborhood Travel Guide, Online!</p>
+    </div>
 
-  <p><strong>1. Welcome to the most exciting place for car lovers</strong></p>
-  
-  <p><em>2. We turn dreams into reality on four wheels</em></p>
-  
-  <p><u>3. Every journey begins with the right choice</u></p>
-  
-  <p>4. Find your dream car today<sup>★</sup> and drive tomorrow<sup>∞</sup></p>
-  
-  <p>5. Power under the hood = H₂0 → CO₂ + H₂O<sub>exhaust</sub></p>
-  
-  <p>6. <s>Cheap cars break your heart</s> — choose quality instead</p>
-  
-  <p>7. The <span class="highlight">best moment</span> is when you first turn the key</p>
-  
-  <p>8. <q>Driving is not just transport — it's freedom.</q></p>
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#destinations">Destinations</a></li>
+            <li><a href="#deals">Weekly Deals</a></li>
+            <li><a href="#packages">Travel Info</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
 
-  <div class="indented-quote">
-    9. “A car is not just metal and wheels…<br>
-    it’s the beginning of hundreds of unforgettable stories.”
-  </div>
+    <div class="container">
+        <!-- Intro -->
+        <p class="intro">
+            Our travel agency is your one-stop destination for unforgettable journeys, quality vacation packages, and everyday adventure deals. We carefully select our destinations to ensure safety, affordability, and trusted experiences for you and your family.
+        </p>
 
-</div>
+        <p class="intro">
+            With friendly service and a clean, organized booking process, we make traveling simple, convenient, and enjoyable.
+        </p>
 
-<footer>
-  10. © 2026 Your Car Website • Find Your Road • Drive Your Story
-</footer>
+        <!-- Blockquote -->
+        <div class="blockquote">
+            "Adventure you can trust, prices you can afford, and service with a smile — your neighborhood travel agency committed to quality every day."
+            <cite>— Tourism Hub</cite>
+        </div>
+
+        <!-- Featured Categories -->
+        <div class="card" id="destinations">
+            <h2>Featured Destinations</h2>
+            <ul class="feature-list">
+                <li><span class="icon">🏖️</span> Beach Resorts</li>
+                <li><span class="icon">🏔️</span> Mountain Expeditions</li>
+                <li><span class="icon">🏛️</span> Cultural Heritage Sites</li>
+                <li><span class="icon">🦁</span> Wildlife Safaris</li>
+                <li><span class="icon">🏙️</span> City Tours</li>
+                <li><span class="icon">🌲</span> Eco-Tourism</li>
+            </ul>
+        </div>
+
+        <!-- Weekly Deals -->
+        <div class="card" id="deals">
+            <h2>This Week's Top Picks</h2>
+            <ul class="feature-list">
+                <li><span class="icon">✈️</span> Mombasa Beach Package – <span class="old-price">KES 45,000</span> <span class="new-price">KES 35,000</span></li>
+                <li><span class="icon">🚐</span> Maasai Mara Safari 3 Days – <span class="old-price">KES 60,000</span> <span class="new-price">KES 48,000</span></li>
+                <li><span class="icon">🌄</span> Mount Kenya Trek – <span class="old-price">KES 35,000</span> <span class="new-price">KES 28,000</span></li>
+                <li><span class="icon">🏝️</span> Zanzibar Getaway – <span class="old-price">KES 80,000</span> <span class="new-price">KES 65,000</span></li>
+            </ul>
+        </div>
+
+        <!-- Travel Info -->
+        <div class="card" id="packages">
+            <h2>Travel & Booking</h2>
+            <ul class="feature-list">
+                <li><span class="icon">🚗</span> <a href="#" class="underline-link">Same-day booking confirmation</a></li>
+                <li><span class="icon">💰</span> <a href="#" class="underline-link">Free cancellation on bookings over KSh 50,000</a></li>
+                <li><span class="icon">📋</span> <a href="#" class="underline-link">Travel documents ready within 24 hours</a></li>
+            </ul>
+            <p style="margin-top: 20px; color: #666;">Group departures available every 25th day of the month</p>
+        </div>
+
+        <!-- Contact -->
+        <div class="card" id="contact">
+            <h2>Contact & Support</h2>
+            <ul class="feature-list">
+                <li><span class="icon">📞</span> <strong>WhatsApp: +254 712 345 678</strong></li>
+                <li><span class="icon">✉️</span> <strong>Email: support@tourismhub.co.ke</strong></li>
+                <li><span class="icon">💬</span> <strong>Live Chat: Available 8am–8pm daily</strong></li>
+            </ul>
+        </div>
+
+        <!-- Things to Pack -->
+        <div class="card">
+            <h2 style="color: #4CAF50; text-align: center; margin-bottom: 20px;">Things to Pack for Your Trip</h2>
+            <ul class="feature-list">
+                <li>Passport & Travel Documents</li>
+                <li>Comfortable Walking Shoes</li>
+                <li>Sunscreen & Sunglasses</li>
+                <li>Camera & Chargers</li>
+            </ul>
+            <div class="nested-list">
+                <ul class="feature-list">
+                    <li>First Aid Kit</li>
+                    <li>Power Adapter</li>
+                    <li>Travel Pillow</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Top Destinations Table -->
+        <div class="table-section">
+            <h2>Our Top Destinations</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>DESTINATION</th>
+                        <th>TYPE</th>
+                        <th>PRICE</th>
+                        <th>AVAILABILITY</th>
+                        <th>DURATION</th>
+                        <th>GUIDED</th>
+                        <th>MEALS INCLUDED</th>
+                        <th>INTERNATIONAL</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Maasai Mara</strong></td>
+                        <td>Safari</td>
+                        <td>KES 45,000</td>
+                        <td>Available</td>
+                        <td>3 Days</td>
+                        <td>YES</td>
+                        <td>YES</td>
+                        <td>NO</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Diani Beach</strong></td>
+                        <td>Beach</td>
+                        <td>KES 25,000</td>
+                        <td>Limited</td>
+                        <td>4 Days</td>
+                        <td>NO</td>
+                        <td>YES</td>
+                        <td>NO</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Mount Kenya</strong></td>
+                        <td>Trekking</td>
+                        <td>KES 35,000</td>
+                        <td>Available</td>
+                        <td>5 Days</td>
+                        <td>YES</td>
+                        <td>YES</td>
+                        <td>NO</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Serengeti</strong></td>
+                        <td>Safari</td>
+                        <td>KES 85,000</td>
+                        <td>Booked</td>
+                        <td>4 Days</td>
+                        <td>YES</td>
+                        <td>YES</td>
+                        <td>YES</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Lamu Island</strong></td>
+                        <td>Cultural</td>
+                        <td>KES 30,000</td>
+                        <td>Available</td>
+                        <td>3 Days</td>
+                        <td>YES</td>
+                        <td>NO</td>
+                        <td>NO</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Steps to Plan -->
+        <div class="steps-section">
+            <h2>Steps to Plan Your Perfect Vacation</h2>
+            <ol class="steps-list">
+                <li><strong>Choose Your Destination</strong> Beach, mountains, city, or safari. Research thoroughly and pick what suits your mood (wrong choice = ruined holiday).</li>
+                
+                <li><strong>Set Your Budget</strong> Include flights, accommodation, meals, and activities. Optional: emergency fund for shopping and unexpected adventures.</li>
+                
+                <li><strong>Book in Advance</strong> Flights, hotels, and tours. Early booking saves money and guarantees availability during peak seasons.</li>
+                
+                <li><strong>Prepare Documents</strong> Passport, visa, travel insurance, and vaccination certificates. For international trips: check expiry dates carefully.</li>
+                
+                <li><strong>Pack Smart</strong> Use a checklist to organize essentials. Don't forget adapters, medications, and comfortable clothing.</li>
+                
+                <li><strong>Enjoy & Explore</strong> Best experienced with an open mind. Take photos, try local cuisine, and make unforgettable memories.</li>
+                
+                <li><strong>Share your stories and start planning the next trip!</strong></li>
+            </ol>
+        </div>
+
+        <!-- Available Packages Gallery -->
+        <div class="gallery-section">
+            <h2>Available Packages</h2>
+            <div class="gallery">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?w=400&h=300&fit=crop" alt="Safari">
+                    <p>Wildlife Safari Experience - 3 Days</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400&h=300&fit=crop" alt="Beach">
+                    <p>Coastal Beach Retreat - 5 Days</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=400&h=300&fit=crop" alt="Mountains">
+                    <p>Mountain Adventure Trek - 4 Days</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
 
 </body>
 </html>
-
-<h2>Task 1: Paragraph Formatting</h2>
-
-<p><strong>Cars connect people</strong> through road trips and car meets.</p>
-<p><em>Thrilling drives</em> are possible with powerful engines.</p>
-<p>Modern safety features protect families every day.</p>
-<p>Showcase launched on 17 February 2026.</p>
-<p>Drivers need fuel or charge during long journeys.</p>
-<p>Old mechanical cars are slowly replaced by electric ones.</p>
-<p>Exclusive supercar events highlight top performance.</p>
-<p>Cars are more than transport — they’re passion.</p>
-
-<blockquote>“The Ultimate Car Showcase unites design, power, and innovation.”</blockquote>
-
-<hr>
-
-<h2>Task 2: Line Formatting</h2>
-
-Sedan  
-SUV  
-Hatchback  
-Pickup Truck  
-Electric Vehicle  
-Sports Car  
-Luxury Sedan  
-Classic Muscle  
-
-Model: Mustang  
-Type: Sports Coupe  
-Year: 2025  
-
-- Petrol  
-- Diesel  
-- Hybrid  
-- Electric  
-- Plug-in Hybrid  
-
-<hr>
-
-<h2>Car Showcase Table</h2>
-
-<table>
-  <tr>
-    <th>Car Model</th>
-    <th>Manufacturer</th>
-    <th>Year</th>
-    <th>Type</th>
-    <th>Fuel</th>
-    <th>Drive</th>
-    <th>Rating</th>
-    <th>0-100 km/h</th>
-    <th>Region</th>
-    <th>Notes</th>
-  </tr>
-  <tr>
-    <td>Cybertruck</td>
-    <td>Tesla</td>
-    <td>2025</td>
-    <td>Pickup</td>
-    <td>Electric</td>
-    <td>AWD</td>
-    <td>9/10</td>
-    <td>2.9 s</td>
-    <td>Global</td>
-    <td>Stainless steel exoskeleton</td>
-  </tr>
-  <tr>
-    <td>911 GT3</td>
-    <td>Porsche</td>
-    <td>2025</td>
-    <td>Sports</td>
-    <td>Petrol</td>
-    <td>RWD</td>
-    <td>10/10</td>
-    <td>3.4 s</td>
-    <td>Global</td>
-    <td>Track-focused masterpiece</td>
-  </tr>
-  <tr>
-    <td>Model Y</td>
-    <td>Tesla</td>
-    <td>2024</td>
-    <td>SUV</td>
-    <td>Electric</td>
-    <td>AWD</td>
-    <td>9/10</td>
-    <td>3.7 s</td>
-    <td>Global</td>
-    <td>Best-selling EV SUV</td>
-  </tr>
-  <tr>
-    <td>Supra</td>
-    <td>Toyota / BMW</td>
-    <td>2025</td>
-    <td>Sports Coupe</td>
-    <td>Petrol</td>
-    <td>RWD</td>
-    <td>8.5/10</td>
-    <td>3.9 s</td>
-    <td>Global</td>
-    <td>Legend reborn</td>
-  </tr>
-  <tr>
-    <td>Land Cruiser</td>
-    <td>Toyota</td>
-    <td>2025</td>
-    <td>Off-road SUV</td>
-    <td>Diesel/Petrol</td>
-    <td>4WD</td>
-    <td>9/10</td>
-    <td>8.0 s</td>
-    <td>Global</td>
-    <td>Indestructible legend</td>
-  </tr>
-</table>
-
-<hr>
-
-<h2>Unordered List: Car Features</h2>
-
-- Electric Powertrain  
-- Advanced Driver Assistance  
-- Premium Interior  
-- All-Wheel Drive  
-- High-Performance Brakes  
-
-<hr>
-
-<h2>Ordered List: Steps to Enjoy the Showcase</h2>
-
-<ol>
-  <li>Explore different car categories</li>
-  <li>Compare models in the table</li>
-  <li>Read about performance specs</li>
-  <li>Imagine your dream drive</li>
-  <li>Visit a dealership or test drive</li>
-</ol>
-
-<hr>
-
-<p style="text-align:center; color:#777; margin-top:60px;">
-© 2026 Ultimate Car Showcase – Built for car lovers everywhere
-</p>
-
-</body>
-
-
-</html>
-<!-- ====================== -->
-<!--     CAR GALLERY SECTION     -->
-<!-- Add this wherever you want images + videos -->
-<!-- ====================== -->
-<section class="car-gallery" id="cars">
-  <div class="container">
-    <h2>Explore Popular Car Models</h2>
-    <p class="subtitle">Check out some stunning cars with images and video reviews (2025–2026 highlights)</p>
-
-    <!-- Image Grid -->
-    <div class="image-grid">
-      <!-- Car 1: Honda Civic (popular compact) -->
-      <div class="car-card">
-        <img src="https://images.unsplash.com/photo-1502877338535-766e3a6052c0?auto=format&fit=crop&q=80&w=1200" 
-             alt="Honda Civic 2025/2026 modern compact car" 
-             loading="lazy">
-        <h3>Honda Civic</h3>
-        <p>Reliable, fun-to-drive compact — a bestseller year after year.</p>
-      </div>
-
-      <!-- Car 2: Toyota Camry (midsize sedan king) -->
-      <div class="car-card">
-        <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&q=80&w=1200" 
-             alt="Toyota Camry sleek sedan" 
-             loading="lazy">
-        <h3>Toyota Camry</h3>
-        <p>Hybrid efficiency meets comfort — top midsize pick.</p>
-      </div>
-
-      <!-- Car 3: Tesla Model Y (EV leader) -->
-      <div class="car-card">
-        <img src="https://images.unsplash.com/photo-1617788138017-2d1336740a7e?auto=format&fit=crop&q=80&w=1200" 
-             alt="Tesla Model Y electric SUV" 
-             loading="lazy">
-        <h3>Tesla Model Y</h3>
-        <p>Fast, tech-packed EV SUV — massive popularity.</p>
-      </div>
-
-      <!-- Car 4: BMW M3/M-like performance -->
-      <div class="car-card">
-        <img src="https://images.unsplash.com/photo-1559416523-140ddc3d238c?auto=format&fit=crop&q=80&w=1200" 
-             alt="BMW M3 style performance sedan" 
-             loading="lazy">
-        <h3>BMW M3</h3>
-        <p>Iconic sports sedan with thrilling dynamics.</p>
-      </div>
-
-      <!-- Car 5: Porsche 911-inspired sports car -->
-      <div class="car-card">
-        <img src="https://images.unsplash.com/photo-1503736334956-4c1d9e8d0e43?auto=format&fit=crop&q=80&w=1200" 
-             alt="Porsche 911 classic sports car" 
-             loading="lazy">
-        <h3>Porsche 911</h3>
-        <p>Legendary rear-engine sports car — pure driving joy.</p>
-      </div>
-
-      <!-- Add more cards if you want (repeat pattern) -->
-    </div>
-
-    <!-- Video Section -->
-    <div class="video-section">
-      <h3>Video Reviews & Walkthroughs</h3>
-      
-      <div class="video-grid">
-        <!-- Toyota Camry 2025 review -->
-        <div class="video-wrapper">
-          <iframe width="100%" height="100%" 
-                  src="https://www.youtube.com/embed/s1JRXIe4QkU" 
-                  title="2025 Toyota Camry Review" 
-                  frameborder="0" 
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                  allowfullscreen></iframe>
-        </div>
-
-        <!-- Honda Civic fun drive -->
-        <div class="video-wrapper">
-          <iframe width="100%" height="100%" 
-                  src="https://www.youtube.com/embed/ByOS4634VcU" 
-                  title="BMW / Performance Car Insight" 
-                  frameborder="0" 
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                  allowfullscreen></iframe>
-        </div>
-
-        <!-- Tesla Model Y Performance -->
-        <div class="video-wrapper">
-          <iframe width="100%" height="100%" 
-                  src="https://www.youtube.com/embed/GfWI3LNB9_8" 
-                  title="2025 Tesla Model Y Performance Review" 
-                  frameborder="0" 
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                  allowfullscreen></iframe>
-        </div>
-
-        <!-- Add more iframes for other models if needed -->
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ====================== -->
-<!--        CSS STYLES      -->
-<!-- Put this in your <head> or external stylesheet -->
-<!-- ====================== -->
-<style>
-  .car-gallery {
-    padding: 60px 20px;
-    background: #f8f9fa;
-  }
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  h2 {
-    text-align: center;
-    margin-bottom: 10px;
-    font-size: 2.5rem;
-  }
-  .subtitle {
-    text-align: center;
-    color: #666;
-    margin-bottom: 40px;
-  }
-
-  .image-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 25px;
-    margin-bottom: 60px;
-  }
-  .car-card {
-    background: white;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    transition: transform 0.3s;
-  }
-  .car-card:hover {
-    transform: translateY(-8px);
-  }
-  .car-card img {
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
-  }
-  .car-card h3 {
-    padding: 15px 15px 5px;
-    margin: 0;
-    font-size: 1.4rem;
-  }
-  .car-card p {
-    padding: 0 15px 20px;
-    margin: 0;
-    color: #555;
-    font-size: 0.95rem;
-  }
-
-  .video-section {
-    text-align: center;
-  }
-  .video-section h3 {
-    margin-bottom: 30px;
-    font-size: 2rem;
-  }
-  .video-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    gap: 30px;
-  }
-  .video-wrapper {
-    position: relative;
-    padding-bottom: 56.25%; /* 16:9 aspect ratio */
-    height: 0;
-    overflow: hidden;
-    border-radius: 12px;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
-  }
-  .video-wrapper iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-  }
-
-  @media (max-width: 768px) {
-    .video-grid {
-      grid-template-columns: 1fr;
-    }
-  }
-</style>
-
-

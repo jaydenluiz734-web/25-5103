@@ -1,1 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tourism Hub - Explore the World</title>
 
+    <!-- 3. EXTERNAL CSS -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- 2. INTERNAL CSS (most shared styles stay here) -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .intro {
+            color: #dfe6e9;
+            margin-bottom: 20px;
+            font-size: 0.95em;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 35px;
+            margin: 25px 0;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .feature-list li {
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 1.1em;
+            color: #2d3436;
+            transition: all 0.3s;
+        }
+
+        .icon {
+            font-size: 1.5em;
+            background: linear-gradient(135deg, #ff6b6b, #feca57);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .new-price {
+            background: linear-gradient(135deg, #d63031, #e17055);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        .old-price {
+            text-decoration: line-through;
+            color: #b2bec3;
+            margin-right: 8px;
+            font-size: 0.9em;
+        }
+
+        footer {
+            margin-top: 60px;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #1a1a2e 0%, #0f3460 100%);
+            border-top: 3px solid #ff6b6b;
+            text-align: center;
+            border-radius: 15px 15px 0 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. HERO – mostly INLINE CSS demo -->
+    <div class="hero" style="background: linear-gradient(135deg, #ff6b6b 0%, #feca57 50%, #48dbfb 100%); color: white; text-align: center; padding: 80px 20px; max-width: 1000px; margin: 0 auto; position: relative; overflow: hidden;">
+        <h1 style="font-size: 3em; margin-bottom: 10px; background: linear-gradient(to right, #fff, #ffeaa7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; animation: float 3s ease-in-out infinite;">Tourism Hub (H1)</h1>
+        <h2 style="font-size: 1.8em; margin-bottom: 10px; font-weight: 600; color: #2d3436;">Travel with US (H2)</h2>
+        <h3 style="font-size: 1.3em; margin-bottom: 10px; font-weight: 500; color: #d63031;">100% Adventure (H3)</h3>
+        <h4 style="font-size: 1.1em; margin-bottom: 20px; font-weight: 500; color: #0984e3;">Local Experiences (H4)</h4>
+        <p class="tagline" style="font-size: 1.3em; font-style: italic; margin-top: 30px; color: #2d3436; font-weight: 500;">Adventure Awaits Daily – Your Neighborhood Travel Guide, Online!</p>
+    </div>
+
+    <!-- Navigation – using external + internal -->
+    <nav style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); padding: 20px; max-width: 1000px; margin: 0 auto; border-top: 3px solid rgba(255,255,255,0.2);">
+        <ul style="list-style: none; display: flex; justify-content: center; gap: 40px; flex-wrap: wrap;">
+            <li><a href="#destinations">Destinations</a></li>
+            <li><a href="#deals">Weekly Deals</a></li>
+            <li><a href="#packages">Travel Info</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+
+        <p class="intro">Our travel agency is your one-stop destination for unforgettable journeys...</p>
+
+        <div class="card" id="destinations">
+            <h2>Featured Destinations</h2>
+            <ul class="feature-list">
+                <li><span class="icon">🏖️</span> Beach Resorts</li>
+                <li><span class="icon">🏔️</span> Mountain Expeditions</li>
+                <li><span class="icon">🏛️</span> Cultural Heritage Sites</li>
+                <li><span class="icon">🦁</span> Wildlife Safaris</li>
+            </ul>
+        </div>
+
+        <div class="card" id="deals">
+            <h2>This Week's Top Picks</h2>
+            <ul class="feature-list">
+                <li><span class="icon">✈️</span> Mombasa Beach Package – <span class="old-price">KES 45,000</span> <span class="new-price">KES 35,000</span></li>
+                <li><span class="icon">🚐</span> Maasai Mara Safari 3 Days – <span class="old-price">KES 60,000</span> <span class="new-price">KES 48,000</span></li>
+            </ul>
+        </div>
+
+        <!-- You can continue moving more sections similarly -->
+
+    </div>
+
+    <!-- Footer – mostly external + some inline overrides -->
+    <footer style="position: relative; overflow: hidden;">
+        <h3 style="color: #ffeaa7; font-size: 1.8em; margin-bottom: 15px;">Tourism Hub</h3>
+        <p style="color: #dfe6e9; font-style: italic; margin-bottom: 25px;">Your Gateway to Unforgettable Adventures</p>
+        <p style="color: #b2bec3; font-size: 0.9em;">© 2026 Tourism Hub. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

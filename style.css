@@ -1,100 +1,110 @@
-/* ================ HEADINGS ================ */
-
-h1 {
-  color: #1a1a8f;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  text-align: center;
-  margin-bottom: 0.4em;
+/* Reset & base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    color: #333;
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* ── Heading styles using classes & IDs ── */
 #main-title {
-  border-bottom: 4px solid #1a1a8f;
-  padding-bottom: 10px;
+    font-size: 3em;
+    margin-bottom: 10px;
+    background: linear-gradient(to right, #fff, #ffeaa7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: float 3s ease-in-out infinite;
 }
 
-.heading-primary {
-  font-size: 2.8rem;
-  letter-spacing: -1px;
+.hero-subtitle {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: #2d3436;
 }
 
-.heading-secondary {
-  color: #2c5282;
-  font-size: 2.2rem;
-  border-left: 6px solid #4299e1;
-  padding-left: 12px;
+.highlight-statement {
+    font-size: 1.3em;
+    margin-bottom: 10px;
+    font-weight: 500;
+    color: #d63031;
 }
 
-.topic-title {
-  color: #2b6cb0;
-  font-size: 1.8rem;
+.local-focus {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+    font-weight: 500;
+    color: #0984e3;
 }
 
-.sub-topic {
-  color: #2c7a7b;
-  font-size: 1.4rem;
-  font-style: italic;
+.quote-title {
+    font-size: 2.1em;
+    color: #2d3436;
+    margin: 20px 0;
+    font-weight: bold;
 }
 
-h5 {
-  color: #744210;
-  font-size: 1.2rem;
+/* Section headings (most h2s in cards) */
+.section-title {
+    color: #2d3436;
+    margin-bottom: 25px;
+    font-size: 1.6em;
+    position: relative;
+    display: inline-block;
 }
 
-.tiny-note {
-  color: #718096;
-  font-size: 0.95rem;
-  letter-spacing: 0.5px;
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background: linear-gradient(90deg, #ff6b6b, #feca57);
+    border-radius: 2px;
 }
 
-/* ================ PARAGRAPHS ================ */
-
-p {
-  line-height: 1.6;
-  margin: 1.2em 0;
-  font-family: 'Georgia', serif;
+/* Hero specific overrides */
+.hero h1, .hero h2, .hero h3, .hero h4, .hero .tagline {
+    position: relative;
+    z-index: 1;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
 }
 
-.intro {
-  font-size: 1.25rem;
-  font-weight: 500;
-  color: #2d3748;
+/* Keep all your other styles (hero, nav, card, table, gallery, etc.) */
+/* Just make sure to remove or adjust any remaining direct h1, h2, h3, h4 selectors */
+
+.hero {
+    background: linear-gradient(135deg, #ff6b6b 0%, #feca57 50%, #48dbfb 100%);
+    color: white;
+    text-align: center;
+    padding: 80px 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
 }
 
-#highlight {
-  background-color: #fefcbf;
-  padding: 12px 18px;
-  border-left: 5px solid #d69e2e;
-  font-weight: bold;
+/* ... rest of your beautiful styles ... */
+
+/* Footer styles moved from inline to here */
+footer {
+    margin-top: 60px;
+    padding: 40px 20px;
+    background: linear-gradient(135deg, #1a1a2e 0%, #0f3460 100%);
+    border-top: 3px solid #ff6b6b;
+    text-align: center;
+    border-radius: 15px 15px 0 0;
+    position: relative;
+    overflow: hidden;
 }
 
-.important {
-  color: #c53030;
-  font-size: 1.15rem;
-}
-
-.description {
-  color: #4a5568;
-}
-
-.quote {
-  font-style: italic;
-  font-size: 1.3rem;
-  color: #4a5568;
-  border-left: 4px solid #a0aec0;
-  padding-left: 16px;
-  margin: 2em 0;
-}
-
-.note {
-  background-color: #f0f9ff;
-  padding: 10px 16px;
-  border-radius: 6px;
-  color: #2b6cb0;
-}
-
-.footer-text {
-  font-size: 0.9rem;
-  color: #718096;
-  text-align: center;
-  margin-top: 3rem;
-}
+/* ... continue moving other inline styles to classes ... */

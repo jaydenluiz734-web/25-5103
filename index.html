@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tourism Hub - Explore Magical Kenya</title>
+    <title>Tourism Hub • Explore the Unknown</title>
     <style>
         * {
             margin: 0;
@@ -11,68 +11,84 @@
             box-sizing: border-box;
         }
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
-            color: #333;
-            line-height: 1.6;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background: #0a0a0f;
+            color: #e0e0ff;
+            line-height: 1.7;
             min-height: 100vh;
+            overflow-x: hidden;
         }
-        /* Hero Section - Enhanced Sunset Gradient with Kenya flag accents */
+
+        /* Futuristic Background */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: 
+                radial-gradient(circle at 30% 20%, rgba(138, 43, 226, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 70% 80%, rgba(138, 43, 226, 0.12) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        /* Hero Section - Dark & Elegant */
         .hero {
-            background: linear-gradient(135deg, #ff6b6b 0%, #feca57 50%, #48dbfb 100%);
+            background: linear-gradient(135deg, #1a0033 0%, #0f001f 50%, #1a0033 100%);
             color: white;
             text-align: center;
-            padding: 100px 20px;
-            max-width: 1200px;
-            margin: 0 auto;
+            padding: 130px 20px 100px;
             position: relative;
             overflow: hidden;
         }
-        .hero::before {
+        .hero::after {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.15'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-            opacity: 0.35;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4') center/cover no-repeat;
+            opacity: 0.15;
+            z-index: 0;
         }
-        .hero h1, .hero h2, .hero h3, .hero h4, .hero .tagline {
+        .hero-content {
             position: relative;
             z-index: 2;
-            text-shadow: 3px 3px 8px rgba(0,0,0,0.3);
         }
         .hero h1 {
-            font-size: 3.5em;
-            margin-bottom: 15px;
-            background: linear-gradient(to right, #fff, #ffeaa7);
+            font-size: 4rem;
+            font-weight: 800;
+            background: linear-gradient(90deg, #c084fc, #a855f7, #7e22ce);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            animation: float 4s ease-in-out infinite;
+            text-shadow: 0 0 40px rgba(168, 85, 247, 0.6);
+            animation: glow 4s ease-in-out infinite alternate;
         }
-        .hero h2 { font-size: 2em; margin-bottom: 12px; font-weight: 700; color: #2d3436; }
-        .hero h3 { font-size: 1.5em; margin-bottom: 12px; font-weight: 600; color: #d63031; }
-        .hero h4 { font-size: 1.3em; margin-bottom: 25px; font-weight: 500; color: #0984e3; }
+        .hero h2 {
+            font-size: 1.8rem;
+            color: #d8b4fe;
+            margin: 15px 0;
+            font-weight: 500;
+        }
         .hero .tagline {
-            font-size: 1.4em;
+            font-size: 1.35rem;
+            color: #c4b5fd;
             font-style: italic;
-            margin-top: 40px;
-            color: #2d3436;
-            font-weight: 600;
+            margin-top: 30px;
+            opacity: 0.95;
         }
-        /* Navigation - Glassmorphism + 5 Menu Items */
+
+        @keyframes glow {
+            from { text-shadow: 0 0 20px rgba(168, 85, 247, 0.5); }
+            to { text-shadow: 0 0 60px rgba(168, 85, 247, 0.9); }
+        }
+
+        /* Navigation - Grok-style Glass + Purple */
         nav {
-            background: rgba(255, 255, 255, 0.12);
-            backdrop-filter: blur(12px);
-            padding: 22px 0;
-            max-width: 1200px;
-            margin: 0 auto;
-            border-top: 4px solid rgba(255,255,255,0.25);
-            border-bottom: 2px solid rgba(255,255,255,0.1);
+            background: rgba(15, 15, 30, 0.85);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(168, 85, 247, 0.3);
             position: sticky;
             top: 0;
             z-index: 100;
+            padding: 20px 0;
         }
         nav ul {
             list-style: none;
@@ -82,291 +98,247 @@
             flex-wrap: wrap;
         }
         nav a {
-            color: #ffeaa7;
+            color: #e0bbff;
             text-decoration: none;
-            font-weight: 700;
-            font-size: 1.15em;
+            font-weight: 600;
+            font-size: 1.15rem;
+            padding: 12px 28px;
+            border-radius: 50px;
             transition: all 0.4s ease;
-            padding: 12px 24px;
-            border-radius: 30px;
         }
         nav a:hover {
-            background: rgba(255, 234, 167, 0.3);
-            color: #fff;
-            transform: translateY(-4px) scale(1.05);
-            box-shadow: 0 4px 15px rgba(255,234,167,0.4);
+            background: rgba(168, 85, 247, 0.25);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 0 25px rgba(168, 85, 247, 0.4);
         }
-        /* Main Container */
+
         .container {
-            max-width: 1200px;
+            max-width: 1280px;
             margin: 0 auto;
-            padding: 30px 20px;
+            padding: 40px 20px;
         }
-        /* Two-Column Layout (Requirement 1) */
+
+        /* Cards - Dark Futuristic */
+        .card {
+            background: rgba(20, 20, 40, 0.85);
+            border-radius: 24px;
+            padding: 45px;
+            margin: 40px 0;
+            border: 1px solid rgba(168, 85, 247, 0.25);
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.6);
+            transition: all 0.4s ease;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+            border-color: #a855f7;
+            box-shadow: 0 25px 70px rgba(168, 85, 247, 0.25);
+        }
+        .card h2 {
+            font-size: 2.2rem;
+            color: #c4b5fd;
+            margin-bottom: 30px;
+            position: relative;
+        }
+        .card h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(to right, #a855f7, #c084fc);
+        }
+
+        /* Two-Column Layout */
         .two-column {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 40px;
             margin: 60px 0;
-            align-items: start;
         }
-        @media (max-width: 768px) {
+        @media (max-width: 900px) {
             .two-column { grid-template-columns: 1fr; }
         }
-        /* Cards & Sections */
-        .card {
-            background: rgba(255, 255, 255, 0.96);
-            border-radius: 20px;
-            padding: 40px;
-            margin: 30px 0;
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
-            border: 2px solid rgba(255, 255, 255, 0.25);
-            position: relative;
-            overflow: hidden;
-        }
-        .card::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0;
-            height: 6px;
-            background: linear-gradient(90deg, #ff6b6b, #feca57, #48dbfb);
-        }
-        .card h2 {
-            color: #2d3436;
-            margin-bottom: 30px;
-            font-size: 2em;
-            position: relative;
-            display: inline-block;
-        }
-        .card h2::after {
-            content: '';
-            position: absolute;
-            bottom: -8px;
-            left: 0;
-            width: 70px;
-            height: 4px;
-            background: linear-gradient(90deg, #ff6b6b, #feca57);
-            border-radius: 4px;
-        }
-        /* Images & Videos in Containers (Requirement 2) */
+
+        /* Media Containers */
         .media-container {
-            background: rgba(255,255,255,0.95);
-            border-radius: 18px;
+            border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-            transition: transform 0.4s ease;
+            border: 2px solid rgba(168, 85, 247, 0.3);
+            background: #111;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.7);
         }
-        .media-container:hover { transform: translateY(-8px) scale(1.03); }
         .gallery {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 25px;
         }
         .gallery-item img {
             width: 100%;
-            height: 240px;
+            height: 260px;
             object-fit: cover;
+            transition: transform 0.5s ease;
         }
+        .gallery-item:hover img {
+            transform: scale(1.08);
+        }
+
+        /* Video Containers */
         .video-container {
             position: relative;
-            padding-top: 56.25%; /* 16:9 aspect ratio */
-            border-radius: 18px;
+            padding-top: 56.25%;
+            border-radius: 20px;
             overflow: hidden;
             background: #000;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
         }
         .video-container iframe {
             position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            border: none;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
         }
-        /* Tables - Full-length (Requirement 3) */
-        .table-section {
-            margin: 60px 0;
-        }
+
+        /* Tables */
         table {
             width: 100%;
             border-collapse: collapse;
-            background: rgba(255,255,255,0.96);
+            background: rgba(25, 25, 45, 0.9);
             border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 15px 50px rgba(0,0,0,0.35);
         }
         th {
-            background: linear-gradient(135deg, #d63031, #e17055);
+            background: linear-gradient(135deg, #6b21a8, #a855f7);
             color: white;
-            padding: 20px 18px;
+            padding: 22px 18px;
             text-align: left;
             font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
         }
         td {
-            padding: 18px;
-            border-bottom: 1px solid rgba(0,0,0,0.08);
-            color: #2d3436;
+            padding: 20px 18px;
+            border-bottom: 1px solid rgba(168, 85, 247, 0.15);
         }
         tr:hover {
-            background: linear-gradient(90deg, rgba(255,107,107,0.08), rgba(254,202,87,0.08));
+            background: rgba(168, 85, 247, 0.1);
         }
-        /* Nested List with 5+ items (Requirement 5) */
+
+        /* Nested List */
         .nested-list {
-            margin-top: 25px;
-            margin-left: 35px;
-            background: linear-gradient(135deg, #fff5f5, #fffbeb);
+            background: rgba(30, 20, 60, 0.7);
             padding: 30px;
-            border-radius: 15px;
-            border: 3px solid #ffeaa7;
+            border-radius: 18px;
+            border: 2px solid #a855f7;
+            margin: 25px 0 0 40px;
         }
-        /* Formatted Paragraphs (Requirement 8) */
-        .formatted-p {
-            margin: 20px 0;
-            font-size: 1.05em;
-            color: #2d3436;
-        }
-        .formatted-p strong { color: #d63031; }
-        .formatted-p em { color: #0984e3; font-style: italic; }
-        /* Footer (Requirement 11) */
+
+        /* Footer */
         footer {
-            margin-top: 80px;
-            padding: 50px 30px;
-            background: linear-gradient(135deg, #1a1a2e 0%, #0f3460 100%);
-            border-top: 5px solid #ff6b6b;
+            background: #0a0a0f;
+            border-top: 3px solid #a855f7;
+            padding: 60px 30px 40px;
             text-align: center;
-            border-radius: 25px 25px 0 0;
-            color: #dfe6e9;
+            margin-top: 80px;
         }
-        /* Aesthetics & Added Features (Requirements 9 & 10) */
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-12px); }
+        footer h3 {
+            font-size: 2.2rem;
+            background: linear-gradient(90deg, #c084fc, #a855f7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
-        .highlight {
-            animation: pulse 2s infinite;
-        }
-        .menu-box {
-            background: rgba(255,255,255,0.1);
-            border-radius: 15px;
-            padding: 15px;
-            display: inline-block;
-            margin-bottom: 30px;
+
+        /* Extra Futuristic Touch */
+        .glow-text {
+            text-shadow: 0 0 25px rgba(168, 85, 247, 0.7);
         }
     </style>
 </head>
 <body>
-    <!-- HERO SECTION -->
+
+    <!-- HERO -->
     <div class="hero">
-        <h1>Tourism Hub</h1>
-        <h2>Travel with Us – Magical Kenya Awaits!</h2>
-        <h3>100% Adventure • 100% Local</h3>
-        <h4>Discover the Real Kenya</h4>
-        <p class="tagline">Your Neighborhood Travel Guide – Safaris, Beaches &amp; Unforgettable Journeys</p>
+        <div class="hero-content">
+            <h1 class="glow-text">TOURISM HUB</h1>
+            <h2>Where the Future of Travel Begins</h2>
+            <p class="tagline">Discover Kenya’s soul through a lens of wonder and elegance</p>
+        </div>
     </div>
 
-    <!-- NAVIGATION MENU BOX – 5 Menus (Requirement 6) -->
+    <!-- NAVIGATION -->
     <nav>
         <ul>
             <li><a href="#destinations">Destinations</a></li>
-            <li><a href="#deals">Weekly Deals</a></li>
-            <li><a href="#packages">Travel Packages</a></li>
-            <li><a href="#videos">Videos &amp; Experiences</a></li>
-            <li><a href="#contact">Contact Us</a></li>
+            <li><a href="#deals">Deals</a></li>
+            <li><a href="#packages">Packages</a></li>
+            <li><a href="#experiences">Experiences</a></li>
+            <li><a href="#contact">Connect</a></li>
         </ul>
     </nav>
 
     <div class="container">
 
-        <!-- INTRO – 5 Formatted Paragraphs (Requirement 8) -->
-        <p class="formatted-p"><strong>Welcome to Tourism Hub!</strong> We are Kenya’s leading travel agency offering safe, affordable, and authentic adventures for families, couples, and solo explorers.</p>
-        <p class="formatted-p">From the golden beaches of <em>Mombasa</em> to the wildlife wonders of <em>Maasai Mara</em>, every journey is handcrafted with local expertise and <strong>world-class service</strong>.</p>
-        <p class="formatted-p">Our team of certified guides ensures every trip is sustainable, culturally respectful, and filled with <em>unforgettable memories</em>.</p>
-        <p class="formatted-p"><strong>Why choose us?</strong> Because we don’t just sell tours — we create <em>life-changing experiences</em> that connect you with the heart of Kenya.</p>
-        <p class="formatted-p">Book today and receive a <strong>free travel insurance</strong> worth KSh 5,000 on every package over KSh 30,000!</p>
-
-        <!-- TWO-COLUMN LAYOUT (Requirement 1) -->
+        <!-- Two Column -->
         <div class="two-column">
-            <!-- Left Column -->
             <div class="card">
-                <h2>Why Kenya is the Ultimate Destination</h2>
-                <ul class="feature-list">
-                    <li><span style="font-size:1.6em;">🦒</span> Home to the Big Five</li>
-                    <li><span style="font-size:1.6em;">🏖️</span> World-class beaches</li>
-                    <li><span style="font-size:1.6em;">🏔️</span> Mount Kenya &amp; Rift Valley</li>
-                    <li><span style="font-size:1.6em;">🦁</span> Over 400 bird species</li>
-                    <li><span style="font-size:1.6em;">🌍</span> Rich Swahili &amp; Maasai culture</li>
-                </ul>
+                <h2>The New Era of Exploration</h2>
+                <p style="font-size:1.1rem; opacity:0.9;">Immerse yourself in Kenya’s breathtaking landscapes with curated journeys that blend luxury, sustainability, and futuristic adventure.</p>
             </div>
-            <!-- Right Column -->
             <div class="card">
-                <h2>Our Promise to You</h2>
-                <p class="formatted-p">Every traveler receives <strong>24/7 WhatsApp support</strong>, a personalized itinerary, and carbon-offset contributions to protect Kenya’s wildlife.</p>
-                <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4" alt="Kenya Landscape" style="width:100%; border-radius:15px; margin-top:20px;">
+                <h2>Why Choose Us</h2>
+                <ul style="list-style:none; font-size:1.1rem;">
+                    <li>✦ AI-powered personalized itineraries</li>
+                    <li>✦ Private guided experiences</li>
+                    <li>✦ Carbon-negative travel commitment</li>
+                    <li>✦ 24/7 virtual concierge</li>
+                </ul>
             </div>
         </div>
 
-        <!-- FEATURED DESTINATIONS (Images in containers) -->
+        <!-- Destinations -->
         <div class="card" id="destinations">
-            <h2>Featured Destinations</h2>
+            <h2>Signature Destinations</h2>
             <div class="gallery">
-                <!-- 5 Images in containers -->
-                <div class="media-container gallery-item">
-                    <img src="https://images.unsplash.com/photo-1516426122078-c23e76319801" alt="Maasai Mara Safari">
-                    <p style="padding:15px; text-align:center; font-weight:600;">Maasai Mara Safari</p>
-                </div>
-                <div class="media-container gallery-item">
-                    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e" alt="Diani Beach">
-                    <p style="padding:15px; text-align:center; font-weight:600;">Diani Beach Paradise</p>
-                </div>
-                <div class="media-container gallery-item">
-                    <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b" alt="Mount Kenya">
-                    <p style="padding:15px; text-align:center; font-weight:600;">Mount Kenya Trek</p>
-                </div>
-                <div class="media-container gallery-item">
-                    <img src="https://images.unsplash.com/photo-1540979388789-6cee28a1cdc9" alt="Lamu Island">
-                    <p style="padding:15px; text-align:center; font-weight:600;">Lamu Cultural Island</p>
-                </div>
-                <div class="media-container gallery-item">
-                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64" alt="Serengeti Extension">
-                    <p style="padding:15px; text-align:center; font-weight:600;">Serengeti Extension</p>
-                </div>
+                <div class="media-container gallery-item"><img src="https://images.unsplash.com/photo-1516426122078-c23e76319801" alt="Maasai Mara"></div>
+                <div class="media-container gallery-item"><img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e" alt="Diani Beach"></div>
+                <div class="media-container gallery-item"><img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b" alt="Mount Kenya"></div>
+                <div class="media-container gallery-item"><img src="https://images.unsplash.com/photo-1540979388789-6cee28a1cdc9" alt="Lamu"></div>
+                <div class="media-container gallery-item"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64" alt="Serengeti"></div>
             </div>
         </div>
 
-        <!-- WEEKLY DEALS -->
+        <!-- Weekly Deals -->
         <div class="card" id="deals">
-            <h2>This Week’s Hot Deals</h2>
-            <ul class="feature-list">
-                <li><span style="font-size:1.8em;">✈️</span> Mombasa Beach Escape – <span class="old-price">KES 48,000</span> <span class="new-price">KES 35,000</span></li>
-                <li><span style="font-size:1.8em;">🦒</span> Maasai Mara 3-Day Safari – <span class="old-price">KES 65,000</span> <span class="new-price">KES 49,000</span></li>
-                <li><span style="font-size:1.8em;">🏔️</span> Mount Kenya Adventure – <span class="old-price">KES 38,000</span> <span class="new-price">KES 29,000</span></li>
-                <li><span style="font-size:1.8em;">🏝️</span> Zanzibar + Diani Combo – <span class="old-price">KES 95,000</span> <span class="new-price">KES 72,000</span></li>
+            <h2>Exclusive Offers</h2>
+            <ul style="list-style:none; font-size:1.15rem;">
+                <li style="padding:12px 0; border-bottom:1px solid rgba(168,85,247,0.2);">Maasai Mara Luxury Safari — <span style="color:#c4b5fd;">KES 52,000</span> <span style="text-decoration:line-through; opacity:0.6;">KES 68,000</span></li>
+                <li style="padding:12px 0; border-bottom:1px solid rgba(168,85,247,0.2);">Diani Beach Private Villa — <span style="color:#c4b5fd;">KES 38,000</span></li>
+                <li style="padding:12px 0; border-bottom:1px solid rgba(168,85,247,0.2);">Mount Kenya Summit Trek — <span style="color:#c4b5fd;">KES 41,000</span></li>
             </ul>
         </div>
 
-        <!-- THINGS TO PACK – NESTED LIST WITH 5+ ITEMS (Requirement 5) -->
-        <div class="card">
-            <h2>Things to Pack for Your Kenyan Adventure</h2>
-            <ul class="feature-list">
-                <li>Passport &amp; Travel Documents</li>
-                <li>Comfortable Safari Shoes</li>
-                <li>Sunscreen SPF 50+ &amp; Sunglasses</li>
-                <li>Camera, Binoculars &amp; Power Bank</li>
-                <li>Lightweight Jacket for Evening Safaris</li>
-            </ul>
-            <div class="nested-list">
-                <ul class="feature-list">
-                    <li>First Aid Kit &amp; Malaria Tablets</li>
-                    <li>Universal Power Adapter (Type G)</li>
-                    <li>Travel Pillow &amp; Earplugs</li>
-                    <li>Reusable Water Bottle</li>
-                    <li>Insect Repellent &amp; Wet Wipes</li>
-                </ul>
+        <!-- Videos / Experiences -->
+        <div class="card" id="experiences">
+            <h2>Immersive Experiences</h2>
+            <div class="gallery" style="grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));">
+                <div class="media-container video-container">
+                    <iframe src="https://www.youtube.com/embed/cDi2fVCtuk0" title="Kenya Tourism" allowfullscreen></iframe>
+                </div>
+                <div class="media-container video-container">
+                    <iframe src="https://www.youtube.com/embed/NSY7jfzsHqY" title="Magical Kenya" allowfullscreen></iframe>
+                </div>
+                <div class="media-container video-container">
+                    <iframe src="https://www.youtube.com/embed/xTYnb78h4G4" title="Maasai Mara" allowfullscreen></iframe>
+                </div>
+                <div class="media-container video-container">
+                    <iframe src="https://www.youtube.com/embed/pHMfciDU-zI" title="Safari Experience" allowfullscreen></iframe>
+                </div>
+                <div class="media-container video-container">
+                    <iframe src="https://www.youtube.com/embed/cCt3F1jxLM0" title="Mombasa" allowfullscreen></iframe>
+                </div>
             </div>
         </div>
 
-        <!-- TABLE 1 – Full-length (Requirement 3) -->
-        <div class="table-section" id="packages">
-            <h2>Our Top Destinations – Full Table</h2>
+        <!-- Tables -->
+        <div class="card" id="packages">
+            <h2>Destination Comparison</h2>
             <table>
                 <thead>
                     <tr>
@@ -374,125 +346,58 @@
                         <th>Type</th>
                         <th>Price (KES)</th>
                         <th>Duration</th>
-                        <th>Guided</th>
-                        <th>Meals</th>
-                        <th>Availability</th>
+                        <th>Level</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr><td><strong>Maasai Mara</strong></td><td>Safari</td><td>45,000</td><td>3 Days</td><td>YES</td><td>YES</td><td>✓ Available</td></tr>
-                    <tr><td><strong>Diani Beach</strong></td><td>Beach</td><td>28,000</td><td>4 Days</td><td>NO</td><td>YES</td><td>✓ Available</td></tr>
-                    <tr><td><strong>Mount Kenya</strong></td><td>Trekking</td><td>35,000</td><td>5 Days</td><td>YES</td><td>YES</td><td>✓ Available</td></tr>
-                    <tr><td><strong>Lamu Island</strong></td><td>Cultural</td><td>32,000</td><td>3 Days</td><td>YES</td><td>NO</td><td>! Limited</td></tr>
-                    <tr><td><strong>Serengeti Extension</strong></td><td>Safari</td><td>85,000</td><td>4 Days</td><td>YES</td><td>YES</td><td>✗ Booked Out</td></tr>
+                    <tr><td>Maasai Mara</td><td>Wildlife Safari</td><td>52,000</td><td>4 Days</td><td>Premium</td></tr>
+                    <tr><td>Diani Beach</td><td>Beach &amp; Relaxation</td><td>38,000</td><td>5 Days</td><td>Luxury</td></tr>
+                    <tr><td>Mount Kenya</td><td>Adventure Trek</td><td>41,000</td><td>6 Days</td><td>Challenging</td></tr>
+                    <tr><td>Lamu Island</td><td>Cultural Escape</td><td>45,000</td><td>4 Days</td><td>Exclusive</td></tr>
                 </tbody>
             </table>
         </div>
 
-        <!-- TABLE 2 – Second full-length table -->
-        <div class="table-section">
-            <h2>Package Comparison Table</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Package</th>
-                        <th>Price (KES)</th>
-                        <th>Highlights</th>
-                        <th>Best For</th>
-                        <th>Includes Flights</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr><td>Budget Safari</td><td>28,000</td><td>Big Five + Camping</td><td>Groups &amp; Students</td><td>NO</td></tr>
-                    <tr><td>Luxury Beach Escape</td><td>65,000</td><td>Private Villa + Spa</td><td>Couples &amp; Honeymoon</td><td>YES</td></tr>
-                    <tr><td>Family Adventure</td><td>42,000</td><td>Kids Activities + Pool</td><td>Families</td><td>NO</td></tr>
-                    <tr><td>Premium Cultural Tour</td><td>55,000</td><td>Lamu + Maasai Village</td><td>Culture Lovers</td><td>YES</td></tr>
-                </tbody>
-            </table>
-        </div>
-
-        <!-- VIDEOS SECTION – 5 Videos in containers (Requirement 2) -->
-        <div class="card" id="videos">
-            <h2>Experience Kenya in 4K – Video Tours</h2>
-            <p class="formatted-p" style="text-align:center; font-style:italic;">Watch these stunning videos and feel the magic of Kenya!</p>
-            <div class="gallery" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));">
-                <!-- Video 1 -->
-                <div class="media-container video-container">
-                    <iframe src="https://www.youtube.com/embed/cDi2fVCtuk0" title="Official Kenya Tourism Video" allowfullscreen></iframe>
-                </div>
-                <!-- Video 2 -->
-                <div class="media-container video-container">
-                    <iframe src="https://www.youtube.com/embed/NSY7jfzsHqY" title="Magical Kenya Official" allowfullscreen></iframe>
-                </div>
-                <!-- Video 3 -->
-                <div class="media-container video-container">
-                    <iframe src="https://www.youtube.com/embed/xTYnb78h4G4" title="Maasai Mara Safari Experience" allowfullscreen></iframe>
-                </div>
-                <!-- Video 4 -->
-                <div class="media-container video-container">
-                    <iframe src="https://www.youtube.com/embed/pHMfciDU-zI" title="Ultimate Kenya Safari" allowfullscreen></iframe>
-                </div>
-                <!-- Video 5 -->
-                <div class="media-container video-container">
-                    <iframe src="https://www.youtube.com/embed/cCt3F1jxLM0" title="Mombasa Beach City Vibes" allowfullscreen></iframe>
-                </div>
+        <!-- Nested List -->
+        <div class="card">
+            <h2>Essential Gear for the Future Traveler</h2>
+            <ul style="list-style:none;">
+                <li>✦ Passport &amp; Digital Visa</li>
+                <li>✦ Solar-Powered Charger</li>
+                <li>✦ Smart Binoculars</li>
+                <li>✦ Eco-Friendly Clothing</li>
+            </ul>
+            <div class="nested-list">
+                <ul style="list-style:none;">
+                    <li>✦ Drone (for aerial memories)</li>
+                    <li>✦ Portable Star Projector</li>
+                    <li>✦ Noise-Cancelling Headphones</li>
+                    <li>✦ Reusable Smart Water Bottle</li>
+                    <li>✦ AR Travel Guide App</li>
+                </ul>
             </div>
         </div>
 
-        <!-- STEPS SECTION (Bonus aesthetics & formatted content) -->
-        <div class="card">
-            <h2>5 Steps to Your Perfect Kenya Holiday</h2>
-            <ol class="steps-list" style="counter-reset: step-counter; padding-left:0; list-style:none;">
-                <li style="margin-bottom:25px; padding-left:50px; position:relative;"><strong style="color:#ff6b6b;">Step 1</strong> Choose your dream destination</li>
-                <li style="margin-bottom:25px; padding-left:50px; position:relative;"><strong style="color:#ff6b6b;">Step 2</strong> Set your budget &amp; dates</li>
-                <li style="margin-bottom:25px; padding-left:50px; position:relative;"><strong style="color:#ff6b6b;">Step 3</strong> Book instantly with us</li>
-                <li style="margin-bottom:25px; padding-left:50px; position:relative;"><strong style="color:#ff6b6b;">Step 4</strong> Receive your digital itinerary</li>
-                <li style="margin-bottom:25px; padding-left:50px; position:relative;"><strong style="color:#ff6b6b;">Step 5</strong> Pack &amp; create memories!</li>
-            </ol>
-        </div>
-
-        <!-- CONTACT FORM – Added Feature -->
+        <!-- Contact -->
         <div class="card" id="contact">
-            <h2>Contact &amp; Book Now</h2>
-            <form style="max-width:600px; margin:0 auto;">
-                <input type="text" placeholder="Full Name" style="width:100%; padding:15px; margin:10px 0; border-radius:10px; border:2px solid #ffeaa7;">
-                <input type="email" placeholder="Email Address" style="width:100%; padding:15px; margin:10px 0; border-radius:10px; border:2px solid #ffeaa7;">
-                <textarea placeholder="Tell us your dream trip..." rows="4" style="width:100%; padding:15px; margin:10px 0; border-radius:10px; border:2px solid #ffeaa7;"></textarea>
-                <button type="submit" style="background:linear-gradient(135deg,#ff6b6b,#feca57); color:#2d3436; padding:15px 40px; border:none; border-radius:30px; font-weight:700; cursor:pointer; margin-top:15px;">Send Inquiry – Get Quote in 2 Hours!</button>
+            <h2>Begin Your Journey</h2>
+            <p style="text-align:center; font-size:1.2rem; margin-bottom:30px;">Let us craft your next unforgettable adventure.</p>
+            <form style="max-width:700px; margin:0 auto;">
+                <input type="text" placeholder="Your Name" style="width:100%; padding:18px; margin:12px 0; background:#1a1a2e; border:1px solid #a855f7; border-radius:12px; color:white;">
+                <input type="email" placeholder="Email Address" style="width:100%; padding:18px; margin:12px 0; background:#1a1a2e; border:1px solid #a855f7; border-radius:12px; color:white;">
+                <textarea placeholder="Describe your dream trip..." rows="5" style="width:100%; padding:18px; margin:12px 0; background:#1a1a2e; border:1px solid #a855f7; border-radius:12px; color:white;"></textarea>
+                <button type="submit" style="background:linear-gradient(90deg, #a855f7, #c084fc); color:#0a0a0f; padding:18px 50px; border:none; border-radius:50px; font-weight:700; font-size:1.1rem; cursor:pointer; margin-top:20px;">Launch My Adventure</button>
             </form>
-            <ul class="feature-list" style="margin-top:30px;">
-                <li>📞 WhatsApp: <strong>+254 712 345 678</strong></li>
-                <li>✉️ Email: <strong>hello@tourismhub.co.ke</strong></li>
-                <li>📍 Location: Nairobi, Kenya</li>
-            </ul>
         </div>
 
     </div>
 
-    <!-- FOOTER (Requirement 11) -->
+    <!-- Footer -->
     <footer>
-        <h3 style="color:#ffeaa7; font-size:2em; margin-bottom:15px;">Tourism Hub</h3>
-        <p style="font-style:italic; margin-bottom:20px;">Your Gateway to Magical Kenya Adventures</p>
-        <div style="display:flex; justify-content:center; gap:25px; margin-bottom:30px;">
-            <a href="#" style="font-size:2em; color:#ffeaa7;">📘</a>
-            <a href="#" style="font-size:2em; color:#ffeaa7;">🐦</a>
-            <a href="#" style="font-size:2em; color:#ffeaa7;">📸</a>
-            <a href="#" style="font-size:2em; color:#ffeaa7;">💬</a>
-        </div>
-        <p>© 2026 Tourism Hub Kenya • All Rights Reserved • Designed with ❤️ for Adventure Seekers</p>
-        <p style="font-size:0.9em; margin-top:15px;">This website meets all Final Project Expectations: 2 columns, 5+ images &amp; 5 videos in containers, 2 full-length tables, nested list (5 items), 5-menu navigation, 5+ formatted paragraphs, added booking form, stunning aesthetics &amp; footer.</p>
+        <h3>Tourism Hub</h3>
+        <p style="margin:20px 0; opacity:0.8;">Crafting tomorrow’s memories in Kenya’s timeless beauty</p>
+        <p style="font-size:0.95rem; opacity:0.6;">© 2026 Tourism Hub • Designed in the spirit of exploration</p>
     </footer>
 
-    <script>
-        // Added feature: Smooth scrolling for menu
-        document.querySelectorAll('nav a').forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) target.scrollIntoView({ behavior: 'smooth' });
-            });
-        });
-        console.log('%c✅ Tourism Hub project fully remade to meet all 40 marks!', 'color:#ff6b6b; font-size:1.2em;');
-    </script>
 </body>
 </html>
